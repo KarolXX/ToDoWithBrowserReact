@@ -1,0 +1,15 @@
+@import "./header";
+@import "./browser";
+@import "./tasksList";
+@import "./listHandler";
+
+.App {
+  //flex
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 90%;
+  margin: 0 auto;
+  background-color: #423737;
+}

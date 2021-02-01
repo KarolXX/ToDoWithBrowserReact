@@ -1,0 +1,112 @@
+h1 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  color: #e93535;
+  text-align: center;
+}
+
+.browser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.browser .form {
+  margin-top: 23px;
+}
+
+.browser .form__title {
+  margin-left: 10px;
+}
+
+.browser .form__input {
+  margin-left: 60px;
+  border-radius: 15px;
+  color: black;
+  outline: none;
+}
+
+.browser .form__button {
+  margin-left: 5px;
+  border-radius: 15px;
+}
+
+.tasksList {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  background-color: #857878;
+}
+
+.tasksList h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.tasksWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.tasksWrapper .task {
+  border: 2px solid #1f1e1f;
+  border-radius: 25%;
+  margin: 5px auto;
+  padding: 5px 5px;
+  background-color: blanchedalmond;
+  color: black;
+}
+
+.tasksWrapper .task:hover {
+  font-weight: bold;
+}
+
+.tasksWrapper .task .task__button {
+  margin-left: 5px;
+  background-color: #ffffff;
+  border: 0.8px solid;
+  border-radius: 15px;
+  outline: none;
+}
+
+.tasksWrapper .task .task__button--remove {
+  border-color: red;
+}
+
+.tasksWrapper .task .task__button--done {
+  border-color: green;
+}
+
+.listHandler {
+  margin: 10px 10px;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #423737;
+}
+/*# sourceMappingURL=main.css.map */

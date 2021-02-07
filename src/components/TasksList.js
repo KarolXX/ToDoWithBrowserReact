@@ -5,16 +5,15 @@ const TasksList = ({ tasksList, setTasksList }) => {
   const [taskRemoved, setTaskRemoved] = useState(false);
   const [taskRemovedId, setTaskRemovedId] = useState();
 
-  //styles
+  //styles for removed task
   const removedTaskStyles = {
-    // transform: "translateY(500px)",
-    // transition: "1.9s",
+    transform: "translateX(500px)",
+    transition: "1.9s",
     color: "red",
   };
 
   const setStyles = (id) => {
     if (taskRemoved && taskRemovedId === id) return removedTaskStyles;
-    else return null;
   };
 
   //remove/done tasks
@@ -47,7 +46,7 @@ const TasksList = ({ tasksList, setTasksList }) => {
     return tasksList.map((task) => {
       if (task.active) {
         return (
-          <li key={task.id} className="task" style={() => setStyles(task.id)}>
+          <li key={task.id} className="task" style={setStyles(task.id)}>
             {task.content}
             <button
               className="task__button task__button--done"

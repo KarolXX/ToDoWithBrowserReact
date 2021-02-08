@@ -46,7 +46,12 @@ const TasksList = ({ tasksList, setTasksList }) => {
     return tasksList.map((task) => {
       if (task.active) {
         return (
-          <li key={task.id} className="task" style={setStyles(task.id)}>
+          <li
+            key={task.id}
+            className="task"
+            id={task.id}
+            style={setStyles(task.id)}
+          >
             {task.content}
             <button
               className="task__button task__button--done"

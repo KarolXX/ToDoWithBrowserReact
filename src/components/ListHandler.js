@@ -15,7 +15,8 @@ const ListHandler = ({ tasksList, setTasksList }) => {
     }));
   };
 
-  const buttonHandler = () => {
+  const buttonHandler = (e) => {
+    e.preventDefault();
     setTasksList((prevState) => [...prevState, newTask]);
   };
 
@@ -26,7 +27,7 @@ const ListHandler = ({ tasksList, setTasksList }) => {
           className="form__input"
           onChange={(e) => inputHandler(e)}
         ></input>
-        <button className="form__button" onClick={buttonHandler}>
+        <button className="form__button" onClick={(e) => buttonHandler(e)}>
           Add Task
         </button>
       </form>

@@ -1,0 +1,23 @@
+these are some numbers 982-222-2211, 222-334-1323
+i would like to share it here (997.)234.231-231
+
+this is sth
+but i dont know what
+so it's just
+random
+text
+xdd
+
+
+
+
+
+
+
+
+
+
+
+//Notes
+[-] : optionally '-'
+[a-z]: any character A through Z

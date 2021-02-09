@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TasksList = ({ tasksList, setTasksList }) => {
   //state
@@ -30,6 +32,8 @@ const TasksList = ({ tasksList, setTasksList }) => {
         ),
       2000
     );
+
+    notify();
   };
 
   const taskDone = (id) => {
@@ -42,7 +46,7 @@ const TasksList = ({ tasksList, setTasksList }) => {
   };
 
   //display tasks
-  const displayTasksListContent = () => {
+  const displayTasks = (option) => {
     return tasksList.map((task) => {
       if (task.active) {
         return (
@@ -53,28 +57,45 @@ const TasksList = ({ tasksList, setTasksList }) => {
             style={setStyles(task.id)}
           >
             {task.content}
-            <button
-              className="task__button task__button--done"
-              onClick={() => taskDone(task.id)}
-            >
-              D
-            </button>
-            <button
-              className="task__button task__button--remove"
-              onClick={() => removeTask(task.id)}
-            >
-              X
-            </button>
+
+            {option === "all" && (
+              <>
+                <button
+                  className="task__button task__button--done"
+                  onClick={() => taskDone(task.id)}
+                >
+                  D
+                </button>
+                <button
+                  className="task__button task__button--remove"
+                  onClick={() => removeTask(task.id)}
+                >
+                  X
+                </button>
+              </>
+            )}
           </li>
         );
       } else return null;
     });
   };
+  // window.addEventListener("DOMContentLoaded", () => {
+  //   //use button "Show only completed tasks" from ListHandler. I hope I will oslve it better using Redux
+  //   const button = document.querySelector(".doneTasks");
+  //   button.setAttribute("onclick", "displayTasks(done)");
+  // });
+
+  //react-toastify needs it
+  toast.configure();
+
+  const notify = () => {
+    toast("You have removed task! ");
+  };
 
   return (
     <section className="tasksList">
       <h2>LIST</h2>
-      <ul className="tasksWrapper">{displayTasksListContent()}</ul>
+      <ul className="tasksWrapper">{displayTasks("all")}</ul>
     </section>
   );
 };

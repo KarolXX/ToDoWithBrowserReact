@@ -93,7 +93,42 @@ h1 {
 }
 
 .listHandler {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   margin: 10px 10px;
+}
+
+.listHandler .doneTasks {
+  margin-left: 100px;
+  background-color: #e7e7e7;
+}
+
+.listHandler .doneTasks:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border-radius: 10px;
+}
+
+.listHandler .history {
+  margin-left: 15px;
+  background-color: #c5b9a8;
+}
+
+.listHandler .history:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  border-radius: 10px;
 }
 
 .App {

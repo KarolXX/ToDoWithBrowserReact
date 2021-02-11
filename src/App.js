@@ -35,13 +35,24 @@ function App() {
       date: defaultDate,
     },
   ]);
+  //state used for displaying all/completed tasks
+  const [showCompleted, setShowCompleted] = useState(false);
+
+  //filter tasksList if you want only completed tasks to be displayed
+  const tasksToDisplay = showCompleted
+    ? tasksList.filter((task) => task.done)
+    : tasksList;
 
   return (
     <div className="App">
       <Header />
-      <Browser tasksList={tasksList} />
-      <TasksList tasksList={tasksList} setTasksList={setTasksList} />
-      <ListHandler tasksList={tasksList} setTasksList={setTasksList} />
+      <Browser tasksList={tasksToDisplay} />
+      <TasksList tasksList={tasksToDisplay} setTasksList={setTasksList} />
+      <ListHandler
+        tasksList={tasksList}
+        setTasksList={setTasksList}
+        setShowCompleted={setShowCompleted}
+      />
     </div>
   );
 }

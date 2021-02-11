@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ListHandler = ({ tasksList, setTasksList }) => {
+const ListHandler = ({ tasksList, setTasksList, setShowCompleted }) => {
   const [newTask, setNewTask] = useState({
     id: tasksList.length,
     content: "",
@@ -22,24 +22,6 @@ const ListHandler = ({ tasksList, setTasksList }) => {
     setTasksList((prevState) => [...prevState, { ...newTask, date: newDate }]);
   };
 
-  const displayTasks = (option) => {
-    const tasksWrapper = document.querySelector(".tasksWrapper");
-    tasksWrapper.innerHTML = tasksList.map((task) => {
-      if (task.active) {
-        return (
-          <li
-            key={task.id}
-            className="task"
-            id={task.id}
-            // style={setStyles(task.id)}
-          >
-            {/* {task.content} */}
-          </li>
-        );
-      } else return null;
-    });
-  };
-
   return (
     <section className="listHandler">
       <form className="form">
@@ -51,10 +33,7 @@ const ListHandler = ({ tasksList, setTasksList }) => {
           Add Task
         </button>
       </form>
-      {/*this button is used in TaskList to avoid duplicating 
-      the very similar function "displayTasks" 
-      I hope i will solve it easier with Redux */}
-      <button className="doneTasks" onClick={() => displayTasks("done")}>
+      <button className="doneTasks" onClick={() => setShowCompleted(true)}>
         Show only completed tasks
       </button>
       <button className="history">History</button>

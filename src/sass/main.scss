@@ -1,0 +1,28 @@
+@import "./header";
+@import "./browser";
+@import "./tasksList";
+@import "./listHandler";
+
+.App {
+  //flex
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 300px;
+  background-color: #423737;
+  border-radius: 10px;
+}
+
+.History {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 100%;
+  margin: 0 auto;
+  background-color: #3a3030;
+  border-radius: 10px;
+}

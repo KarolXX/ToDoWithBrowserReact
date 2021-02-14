@@ -1,0 +1,29 @@
+.listHandler {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  margin: 10px 10px;
+
+  .doneTasks {
+    margin-left: 100px;
+    background-color: #e7e7e7;
+
+    &:hover {
+      transition: 0.4s;
+      transform: scale(1.2);
+      border-radius: 10px;
+    }
+  }
+
+  .buttonHistory {
+    margin-left: 15px;
+    background-color: rgb(197, 185, 168);
+
+    &:hover {
+      transition: 0.4s;
+      transform: scale(1.2);
+      border-radius: 10px;
+    }
+  }
+}
